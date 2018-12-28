@@ -9,5 +9,6 @@ namespace Desafio.Ingresso.Com.Domain.Interfaces
         T GetById(string id);
         void Update(T obj);
         void Delete(T obj);
+        void Dispose();
     }
 }
