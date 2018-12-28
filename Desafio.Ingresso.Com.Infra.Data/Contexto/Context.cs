@@ -1,8 +1,5 @@
 ﻿using Desafio.Ingresso.Com.Domain.Entities;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Desafio.Ingresso.Com.Infra.Data.Contexto
 {

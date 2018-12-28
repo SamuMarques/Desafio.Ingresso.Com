@@ -1,7 +1,6 @@
 ﻿using Desafio.Ingresso.Com.Domain.Enum;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Desafio.Ingresso.Com.Domain.Entities
 {
