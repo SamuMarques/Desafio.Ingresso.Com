@@ -3,9 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apresentacao", "0 - Apresentacao", "{C75E31DD-BCDC-4CA9-8E88-5E49730500A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Servico", "1 - Servico", "{0217C93E-8C6F-4988-A5DF-9D53A42F0B24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Aplicacao", "2 - Aplicacao", "{DB337D1D-0142-4C99-A08D-7738EB1CBE5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Dominio", "3 - Dominio", "{F8C8D748-FB28-48CF-B2B2-27D48F550FE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{16EAED6C-D173-445C-850D-F54CD9AA5F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Ingresso.Com.Infra.Data", "Desafio.Ingresso.Com.Infra.Data\Desafio.Ingresso.Com.Infra.Data.csproj", "{E85A1518-9F7E-47CE-9E1A-1D648990E0DB}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E85A1518-9F7E-47CE-9E1A-1D648990E0DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85A1518-9F7E-47CE-9E1A-1D648990E0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85A1518-9F7E-47CE-9E1A-1D648990E0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85A1518-9F7E-47CE-9E1A-1D648990E0DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E85A1518-9F7E-47CE-9E1A-1D648990E0DB} = {16EAED6C-D173-445C-850D-F54CD9AA5F5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6D83FAD1-58D8-40F5-903B-920131231BBF}
