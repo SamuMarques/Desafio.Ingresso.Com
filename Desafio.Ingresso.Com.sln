@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apresentacao", "0 - Apresentacao", "{C75E31DD-BCDC-4CA9-8E88-5E49730500A7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Servico", "1 - Servico", "{0217C93E-8C6F-4988-A5DF-9D53A42F0B24}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Aplicacao", "2 - Aplicacao", "{DB337D1D-0142-4C99-A08D-7738EB1CBE5D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Servico", "1 - Servico", "{DB337D1D-0142-4C99-A08D-7738EB1CBE5D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Dominio", "3 - Dominio", "{F8C8D748-FB28-48CF-B2B2-27D48F550FE9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{16EAED6C-D173-445C-850D-F54CD9AA5F5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Ingresso.Com.Infra.Data", "Desafio.Ingresso.Com.Infra.Data\Desafio.Ingresso.Com.Infra.Data.csproj", "{E85A1518-9F7E-47CE-9E1A-1D648990E0DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Ingresso.Com.Infra.Data", "Desafio.Ingresso.Com.Infra.Data\Desafio.Ingresso.Com.Infra.Data.csproj", "{E85A1518-9F7E-47CE-9E1A-1D648990E0DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Ingresso.Com.Domain", "Desafio.Ingresso.Com.Domain\Desafio.Ingresso.Com.Domain.csproj", "{CB47F69E-D818-466E-8E29-19F388DF50FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Ingresso.Com.Domain", "Desafio.Ingresso.Com.Domain\Desafio.Ingresso.Com.Domain.csproj", "{CB47F69E-D818-466E-8E29-19F388DF50FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Ingresso.Com.API", "Desafio.Ingresso.Com.API\Desafio.Ingresso.Com.API.csproj", "{AF526EDD-32D2-4F8E-BD91-DC838D1B47A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Aplicacao", "2 - Aplicacao", "{CE97F647-089F-40F7-A620-D19EACA9217D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +31,10 @@ Global
 		{CB47F69E-D818-466E-8E29-19F388DF50FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB47F69E-D818-466E-8E29-19F388DF50FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB47F69E-D818-466E-8E29-19F388DF50FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF526EDD-32D2-4F8E-BD91-DC838D1B47A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF526EDD-32D2-4F8E-BD91-DC838D1B47A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF526EDD-32D2-4F8E-BD91-DC838D1B47A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF526EDD-32D2-4F8E-BD91-DC838D1B47A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E85A1518-9F7E-47CE-9E1A-1D648990E0DB} = {16EAED6C-D173-445C-850D-F54CD9AA5F5F}
 		{CB47F69E-D818-466E-8E29-19F388DF50FE} = {F8C8D748-FB28-48CF-B2B2-27D48F550FE9}
+		{AF526EDD-32D2-4F8E-BD91-DC838D1B47A9} = {DB337D1D-0142-4C99-A08D-7738EB1CBE5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6D83FAD1-58D8-40F5-903B-920131231BBF}

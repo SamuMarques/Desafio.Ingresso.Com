@@ -4,6 +4,5 @@ namespace Desafio.Ingresso.Com.Domain.Interfaces
 {
     public interface ICinemaRepository : IRepositoryBase<Cinema>
     {
-
     }
 }

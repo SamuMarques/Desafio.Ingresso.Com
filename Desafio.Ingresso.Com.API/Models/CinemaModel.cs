@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace Desafio.Ingresso.Com.Domain.Entities
+namespace Desafio.Ingresso.Com.API.Models
 {
-    public class Cinema
+    public class CinemaModel
     {
         public string Id { get; set; }
         public string Nome { get; set; }
         public string Cidade { get; set; }
         public string Logradouro { get; set; }
 
-        public virtual IEnumerable<Sala> Salas { get; set; }
+        public virtual IEnumerable<SalaModel> Salas { get; set; }
     }
 }

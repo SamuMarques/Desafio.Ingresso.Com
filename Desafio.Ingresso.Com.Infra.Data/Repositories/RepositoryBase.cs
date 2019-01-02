@@ -1,41 +1,53 @@
 ﻿using Desafio.Ingresso.Com.Domain.Interfaces;
 using Desafio.Ingresso.Com.Infra.Data.Contexto;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Desafio.Ingresso.Com.Infra.Data.Repositories
 {
-    public class RepositoryBase<T> : IDisposable, IRepositoryBase<T> where T : class
+    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        public void Add(T obj)
+        protected Context Db = new Context();
+        public void Create(T obj)
         {
-            throw new NotImplementedException();
+            Db.GetCollection<T>().InsertOne(obj);
         }
 
-        public void Delete(T obj)
+        public IEnumerable<T> FindAllWhere(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+            return Db.GetCollection<T>().Find(filter).ToList();
         }
+
+        public IEnumerable<T> GetAll()
+        {
+            return Db.GetCollection<T>().Find(x => true).ToList();
+        }
+
+        public T GetById(string id)
+        {
+            var filter = Builders<T>.Filter.Eq("Id", id);
+            return Db.GetCollection<T>().Find(filter).FirstOrDefault();
+        }
+
 
         public void Dispose()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<T> GetAll()
+        public void Update(string id, T obj)
         {
-            throw new NotImplementedException();
+            var filter = Builders<T>.Filter.Eq("Id", id);
+            Db.GetCollection<T>().ReplaceOne(filter, obj);
         }
 
-        public T GetById(string id)
+        public void Delete(string id)
         {
-            throw new NotImplementedException();
+            var filter = Builders<T>.Filter.Eq("Id", id);
+            Db.GetCollection<T>().DeleteOne(filter);
         }
-
-        public void Update(T obj)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
