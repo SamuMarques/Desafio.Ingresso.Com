@@ -35,7 +35,7 @@ namespace Desafio.Ingresso.Com.Infra.Data.Repositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            GC.SuppressFinalize(this);
         }
 
         public void Update(string id, T obj)

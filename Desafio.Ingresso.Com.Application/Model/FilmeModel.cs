@@ -1,12 +1,11 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Desafio.Ingresso.Com.API.Models
+namespace Desafio.Ingresso.Com.Application.Model
 {
     public class FilmeModel
     {
         [Key]
-        public string IdFilme { get; set; }
+        public string Id { get; set; }
         [Required(ErrorMessage = "Preencha o campo nome")]
         [MaxLength(120, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]

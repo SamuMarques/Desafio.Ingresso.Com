@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Desafio.Ingresso.Com.Domain.Entities;
-using Desafio.Ingresso.Com.Domain.Interfaces.Services;
-using Microsoft.AspNetCore.Http;
+using Desafio.Ingresso.Com.Application.Interfaces;
+using Desafio.Ingresso.Com.Application.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Desafio.Ingresso.Com.API.Controllers
@@ -13,36 +10,34 @@ namespace Desafio.Ingresso.Com.API.Controllers
     [ApiController]
     public class CinemaController : ControllerBase
     {
-        private readonly ICinemaService _cinemaService;
-        private readonly ISalaService _salaService;
+        private readonly ICinemaAppService _cinemaAppService;
 
-        public CinemaController(ICinemaService cinemaService, ISalaService salaService)
+        public CinemaController(ICinemaAppService cinemaAppService)
         {
-            _cinemaService = cinemaService;
-            _salaService = salaService;
+            _cinemaAppService = cinemaAppService;
         }
 
         // GET: api/Cinema
         [HttpGet]
-        public IEnumerable<Cinema> Get()
+        public IEnumerable<CinemaModel> Get()
         {
-            return _cinemaService.GetAll();
+            return _cinemaAppService.GetAll();
         }
 
         // GET: api/Cinema/5
         [HttpGet("{id}")]
-        public Cinema Get(string id)
+        public CinemaModel Get(string id)
         {
-            return _cinemaService.GetById(id);
+            return _cinemaAppService.GetById(id);
         }
 
         // POST: api/Cinema
         [HttpPost]
-        public IActionResult Post([FromBody] Cinema cinema)
+        public IActionResult Post([FromBody] CinemaModel cinema)
         {
             try
             {
-                _cinemaService.Create(cinema);
+                _cinemaAppService.Create(cinema);
                 return Ok(cinema);
             }
             catch (Exception ex)
@@ -53,17 +48,17 @@ namespace Desafio.Ingresso.Com.API.Controllers
 
         // PUT: api/Cinema/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] Cinema cinema)
+        public void Put(string id, [FromBody] CinemaModel cinema)
         {
             cinema.Id = id;
-            _cinemaService.Update(id, cinema);
+            _cinemaAppService.Update(id, cinema);
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(string id)
         {
-            _cinemaService.Delete(id);
+            _cinemaAppService.Delete(id);
         }
 
     }

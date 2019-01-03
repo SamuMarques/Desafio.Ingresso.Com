@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Desafio.Ingresso.Com.Domain.Interfaces;
-using Desafio.Ingresso.Com.Domain.Interfaces.Services;
-using Desafio.Ingresso.Com.Domain.Service;
-using Desafio.Ingresso.Com.Infra.Data.Repositories;
+﻿using Desafio.Ingresso.Com.Application.Configuration;
+using Desafio.Ingresso.Com.Infra.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +22,9 @@ namespace Desafio.Ingresso.Com.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            ContainerSetup(services);
+
+            ContainerSetup.Container(services);
+            AutoMapperConfig.InicializeMapper();
 
             services.AddSwaggerGen(s =>
             {
@@ -40,21 +36,26 @@ namespace Desafio.Ingresso.Com.API
             });
         }
 
-        private void ContainerSetup(IServiceCollection services)
-        {
+        //private void ContainerSetup(IServiceCollection services)
+        //{
 
-            //Repository
-            services.AddScoped<IFilmeRepository, FilmeRepository>();
-            services.AddScoped<ICinemaRepository, CinemaRepository>();
-            services.AddScoped<ISalaRepository, SalaRepository>();
-            services.AddScoped<ISessaoRepository, SessaoRepository>();
+        //    //Repository
+        //    services.AddScoped<IFilmeRepository, FilmeRepository>();
+        //    services.AddScoped<ICinemaRepository, CinemaRepository>();
+        //    services.AddScoped<ISalaRepository, SalaRepository>();
+        //    services.AddScoped<ISessaoRepository, SessaoRepository>();
 
-            //Services
-            services.AddScoped<IFilmeService, FilmeService>();
-            services.AddScoped<ICinemaService, CinemaService>();
-            services.AddScoped<ISessaoService, SessaoService>();
-            services.AddScoped<ISalaService, SalaService>();
-        }
+        //    //Services
+        //    services.AddScoped<IFilmeService, FilmeService>();
+        //    services.AddScoped<ICinemaService, CinemaService>();
+        //    services.AddScoped<ISessaoService, SessaoService>();
+        //    services.AddScoped<ISalaService, SalaService>();
+
+        //    //ApplicationServices
+        //    services.AddScoped<IFilmeAppService, FilmeAppService>();
+        //    services.AddScoped<ICinemaAppService, CinemaAppService>();
+
+        //}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Desafio.Ingresso.Com.API.Models
+namespace Desafio.Ingresso.Com.Application.Model
 {
     public class CinemaModel
     {

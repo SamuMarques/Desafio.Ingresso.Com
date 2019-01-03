@@ -1,5 +1,8 @@
-﻿
-namespace Desafio.Ingresso.Com.API.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Desafio.Ingresso.Com.Application.Model
 {
     public class SalaModel
     {

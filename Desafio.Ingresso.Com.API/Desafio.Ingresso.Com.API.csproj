@@ -10,14 +10,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Desafio.Ingresso.Com.Domain\Desafio.Ingresso.Com.Domain.csproj" />
-    <ProjectReference Include="..\Desafio.Ingresso.Com.Infra.Data\Desafio.Ingresso.Com.Infra.Data.csproj" />
+    <ProjectReference Include="..\Desafio.Ingresso.Com.Application\Desafio.Ingresso.Com.Application.csproj" />
+    <ProjectReference Include="..\Desafio.Ingresso.Com.Infra.Core\Desafio.Ingresso.Com.Infra.Core.csproj" />
   </ItemGroup>
 
 </Project>

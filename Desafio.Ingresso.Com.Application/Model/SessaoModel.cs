@@ -1,10 +1,8 @@
 ﻿using Desafio.Ingresso.Com.Domain.Enum;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Desafio.Ingresso.Com.API.Models
+namespace Desafio.Ingresso.Com.Application.Model
 {
     public class SessaoModel
     {

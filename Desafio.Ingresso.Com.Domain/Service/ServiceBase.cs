@@ -28,7 +28,7 @@ namespace Desafio.Ingresso.Com.Domain.Service
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            GC.SuppressFinalize(this);
         }
 
         public IEnumerable<T> FindAllWhere(Expression<Func<T, bool>> filter)

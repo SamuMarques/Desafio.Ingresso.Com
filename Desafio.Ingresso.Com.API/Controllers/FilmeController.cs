@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Desafio.Ingresso.Com.API.Models;
-using Desafio.Ingresso.Com.Domain.Entities;
-using Desafio.Ingresso.Com.Domain.Interfaces.Services;
-using Microsoft.AspNetCore.Http;
+using Desafio.Ingresso.Com.Application.Interfaces;
+using Desafio.Ingresso.Com.Application.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Desafio.Ingresso.Com.API.Controllers
@@ -14,35 +10,34 @@ namespace Desafio.Ingresso.Com.API.Controllers
     [ApiController]
     public class FilmeController : ControllerBase
     {
+        private readonly IFilmeAppService _filmeAppService;
 
-        private readonly IFilmeService _filmeService;
-
-        public FilmeController(IFilmeService filmeService)
+        public FilmeController(IFilmeAppService filmeAppService)
         {
-            _filmeService = filmeService;
+            _filmeAppService = filmeAppService;
         }
 
         // GET: api/Filme
         [HttpGet]
-        public IEnumerable<Filme> Get()
+        public IEnumerable<FilmeModel> Get()
         {
-            return _filmeService.GetAll();
+            return _filmeAppService.GetAll();
         }
 
         // GET: api/Filme/5
         [HttpGet("{id}")]
-        public Filme Get(string id)
+        public FilmeModel Get(string id)
         {
-            return _filmeService.GetById(id);
+            return _filmeAppService.GetById(id);
         }
 
         // POST: api/Filme
         [HttpPost]
-        public IActionResult Post([FromBody] Filme filme)
+        public IActionResult Post([FromBody] FilmeModel filme)
         {
             try
             {
-                _filmeService.Create(filme);
+                _filmeAppService.Create(filme);
 
                 return Ok(filme);
             }
@@ -55,12 +50,12 @@ namespace Desafio.Ingresso.Com.API.Controllers
 
         // PUT: api/Filme/Id
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody] Filme filme)
+        public IActionResult Put(string id, [FromBody] FilmeModel filme)
         {
             try
             {
                 filme.Id = id;
-                _filmeService.Update(id, filme);
+                _filmeAppService.Update(id, filme);
                 return Ok(filme);
             }
             catch (Exception ex)
@@ -73,7 +68,7 @@ namespace Desafio.Ingresso.Com.API.Controllers
         [HttpDelete("{id}")]
         public void Delete(string id)
         {
-            _filmeService.Delete(id);
+            _filmeAppService.Delete(id);
         }
     }
 }
