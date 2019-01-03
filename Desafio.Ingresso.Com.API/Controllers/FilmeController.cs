@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Desafio.Ingresso.Com.API.Controllers
 {
-    [Route("api/Filme")]
+    [Route("api/[controller]")]
     [ApiController]
     public class FilmeController : ControllerBase
     {

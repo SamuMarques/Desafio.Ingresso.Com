@@ -9,15 +9,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Desafio.Ingresso.Com.API.Controllers
 {
-    [Route("api/Cinema")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CinemaController : ControllerBase
     {
         private readonly ICinemaService _cinemaService;
+        private readonly ISalaService _salaService;
 
-        public CinemaController(ICinemaService cinemaService)
+        public CinemaController(ICinemaService cinemaService, ISalaService salaService)
         {
             _cinemaService = cinemaService;
+            _salaService = salaService;
         }
 
         // GET: api/Cinema
@@ -63,5 +65,6 @@ namespace Desafio.Ingresso.Com.API.Controllers
         {
             _cinemaService.Delete(id);
         }
+
     }
 }

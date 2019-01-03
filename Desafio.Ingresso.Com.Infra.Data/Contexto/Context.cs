@@ -13,7 +13,7 @@ namespace Desafio.Ingresso.Com.Infra.Data.Contexto
 
         public Context()
         {
-            database = new MongoClient("mongodb://admin:desenv1@ds113873.mlab.com:13873/samuelsdb").GetDatabase("samuelsdb");
+            database = new MongoClient("mongodb://admin:desenv1@ds147684.mlab.com:47684/samuelsdb").GetDatabase("samuelsdb");
         }
         #region Generic
 

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Desafio.Ingresso.Com.API
 {
@@ -28,6 +29,15 @@ namespace Desafio.Ingresso.Com.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             ContainerSetup(services);
+
+            services.AddSwaggerGen(s =>
+            {
+                s.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "Desafio Ingresso.com",
+                });
+            });
         }
 
         private void ContainerSetup(IServiceCollection services)
@@ -43,7 +53,7 @@ namespace Desafio.Ingresso.Com.API
             services.AddScoped<IFilmeService, FilmeService>();
             services.AddScoped<ICinemaService, CinemaService>();
             services.AddScoped<ISessaoService, SessaoService>();
-
+            services.AddScoped<ISalaService, SalaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +65,12 @@ namespace Desafio.Ingresso.Com.API
             }
 
             app.UseMvc();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(s =>
+            {
+                s.SwaggerEndpoint("/swagger/v1/swagger.json", "Desafio Ingresso.com");
+            });
         }
 
     }

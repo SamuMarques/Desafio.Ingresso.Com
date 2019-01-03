@@ -1,6 +1,7 @@
 ﻿using Desafio.Ingresso.Com.Domain.Entities;
 using Desafio.Ingresso.Com.Domain.Interfaces;
 using Desafio.Ingresso.Com.Domain.Interfaces.Services;
+using System.Linq;
 
 namespace Desafio.Ingresso.Com.Domain.Service
 {
@@ -13,5 +14,6 @@ namespace Desafio.Ingresso.Com.Domain.Service
         {
             _cinemaRepository = cinemaRepository;
         }
+
     }
 }

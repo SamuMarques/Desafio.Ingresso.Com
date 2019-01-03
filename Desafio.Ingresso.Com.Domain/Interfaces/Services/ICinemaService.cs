@@ -5,6 +5,5 @@ namespace Desafio.Ingresso.Com.Domain.Interfaces.Services
 {
     public interface ICinemaService : IServiceBase<Cinema>
     {
-
     }
 }
