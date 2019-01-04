@@ -6,8 +6,12 @@ namespace Desafio.Ingresso.Com.Application.Model
 {
     public class SalaModel
     {
-        public string IdSala { get; set; }
+        public SalaModel()
+        {
+            Id = Guid.NewGuid();
+        }
+
+        public Guid Id { get; set; }
         public string Identificador { get; set; }
-        public virtual CinemaModel Cinema { get; set; }
     }
 }

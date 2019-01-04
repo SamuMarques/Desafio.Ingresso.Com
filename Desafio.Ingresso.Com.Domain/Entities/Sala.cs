@@ -6,11 +6,6 @@ namespace Desafio.Ingresso.Com.Domain.Entities
 {
     public class Sala
     {
-        public Sala()
-        {
-            Id = Guid.NewGuid();
-        }
-
         public Guid Id { get; set; }
         public string Identificador { get; set; }
     }

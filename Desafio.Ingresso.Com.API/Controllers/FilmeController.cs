@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Desafio.Ingresso.Com.Application.Interfaces;
+﻿using Desafio.Ingresso.Com.Application.Interfaces;
 using Desafio.Ingresso.Com.Application.Model;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 
 namespace Desafio.Ingresso.Com.API.Controllers
 {

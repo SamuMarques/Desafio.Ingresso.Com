@@ -15,8 +15,16 @@ namespace Desafio.Ingresso.Com.Domain.Entities
         public virtual IEnumerable<DiasDaSemana> DiasDaSemana { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
-        public virtual Cinema Sala { get; set; }
-        public virtual Filme Filme { get; set; }
-        public virtual Cinema Cinema { get; set; }
+        public string SalaId { get; set; }
+        public string FilmeId { get; set; }
+        public string CinemaId { get; set; }
+
+        public bool CreateIsValid()
+        {
+            return DataInicio < DataFim 
+                && !string.IsNullOrWhiteSpace(SalaId) 
+                && !string.IsNullOrWhiteSpace(FilmeId) 
+                && !string.IsNullOrWhiteSpace(CinemaId);
+        }
     }
 }

@@ -27,6 +27,8 @@ namespace Desafio.Ingresso.Com.Infra.Core
             //ApplicationServices
             services.AddScoped<IFilmeAppService, FilmeAppService>();
             services.AddScoped<ICinemaAppService, CinemaAppService>();
+            services.AddScoped<ISessaoAppService, SessaoAppService>();
+            
         }
     }
 }
