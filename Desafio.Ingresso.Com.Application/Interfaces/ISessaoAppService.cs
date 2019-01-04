@@ -7,7 +7,7 @@ namespace Desafio.Ingresso.Com.Application.Interfaces
     public interface ISessaoAppService : IDisposable
     {
         SessaoModel GetById(string id);
-        IEnumerable<SessaoModel> GetAll();
+        IEnumerable<SessaoModel> FindAll(string idCidade);
         void Create(SessaoCrudModel sessao);
         void Update(string id, SessaoCrudModel sessao);
         void Delete(string id);

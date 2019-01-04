@@ -1,22 +1,16 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Desafio.Ingresso.Com.Domain.Entities
 {
-    public class Cinema
+    public class Cidade
     {
-        public Cinema()
-        {
-            Salas = new List<Sala>();
-        }
 
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string Id { get; set; }
         public string Nome { get; set; }
-        public string CidadeId { get; set; }
-        public string Logradouro { get; set; }
-
-        public virtual IList<Sala> Salas { get; set; }
     }
 }

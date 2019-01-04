@@ -13,5 +13,6 @@ namespace Desafio.Ingresso.Com.Domain.Interfaces
         void Update(string id, T obj);
         void Delete(string id);
         void Dispose();
+        bool Any(Expression<Func<T, bool>> filter);
     }
 }

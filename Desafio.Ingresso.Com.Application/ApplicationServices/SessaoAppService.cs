@@ -6,6 +6,8 @@ using Desafio.Ingresso.Com.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Desafio.Ingresso.Com.Application.ApplicationServices
 {
@@ -46,15 +48,22 @@ namespace Desafio.Ingresso.Com.Application.ApplicationServices
             GC.SuppressFinalize(this);
         }
 
-        public IEnumerable<SessaoModel> GetAll()
+        public IEnumerable<SessaoModel> FindAll(string idCidade)
         {
             var lst = new List<SessaoModel>();
-            var sessoes = _sessaoService.GetAll().ToList();
 
+            var sessoes = _sessaoService.GetAll().ToList();
             foreach (var sessao in sessoes)
             {
                 var model = Mapper.Map<Sessao, SessaoModel>(sessao);
-                model.Cinema = Mapper.Map<Cinema, CinemaModel>(_cinemaService.GetById(sessao.CinemaId));
+                var cinema = _cinemaService.GetById(sessao.CinemaId);
+
+                if (!string.IsNullOrWhiteSpace(idCidade) && cinema.CidadeId != idCidade)
+                {
+                    continue;
+                }
+                model.Cinema = Mapper.Map<Cinema, CinemaModel>(cinema);
+                
                 model.Filme = Mapper.Map<Filme, FilmeModel>(_filmeService.GetById(sessao.FilmeId));
                 model.Sala = model.Cinema.Salas.Where(x => x.Id == Guid.Parse(sessao.SalaId)).FirstOrDefault();
                 lst.Add(model);

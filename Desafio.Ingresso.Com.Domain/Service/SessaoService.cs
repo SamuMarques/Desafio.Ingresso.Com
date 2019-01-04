@@ -1,6 +1,8 @@
 ﻿using Desafio.Ingresso.Com.Domain.Entities;
 using Desafio.Ingresso.Com.Domain.Interfaces;
 using Desafio.Ingresso.Com.Domain.Interfaces.Services;
+using System;
+using System.Linq;
 
 namespace Desafio.Ingresso.Com.Domain.Service
 {
@@ -9,7 +11,7 @@ namespace Desafio.Ingresso.Com.Domain.Service
         private readonly ISessaoRepository _sessaoRepository;
 
         public SessaoService(ISessaoRepository sessaoRepository)
-            :base(sessaoRepository)
+            : base(sessaoRepository)
         {
             _sessaoRepository = sessaoRepository;
         }

@@ -2,7 +2,7 @@
 
 namespace Desafio.Ingresso.Com.Domain.Enum
 {
-    public enum DiasDaSemana
+    public enum DiasDaSemana : int
     {
         [Description("Domingo")]
         domingo = 1,

@@ -21,6 +21,11 @@ namespace Desafio.Ingresso.Com.Infra.Data.Repositories
             return Db.GetCollection<T>().Find(filter).ToList();
         }
 
+        public bool Any(Expression<Func<T, bool>> filter)
+        {
+            return Db.GetCollection<T>().CountDocuments(filter) > 0;
+        }
+
         public IEnumerable<T> GetAll()
         {
             return Db.GetCollection<T>().Find(x => true).ToList();

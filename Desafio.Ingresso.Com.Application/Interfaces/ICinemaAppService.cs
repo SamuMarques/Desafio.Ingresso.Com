@@ -9,8 +9,8 @@ namespace Desafio.Ingresso.Com.Application.Interfaces
     {
         IEnumerable<CinemaModel> GetAll();
         CinemaModel GetById(string id);
-        void Create(CinemaModel cinema);
-        void Update(string id, CinemaModel cinema);
+        void Create(CinemaCrudModel cinema);
+        void Update(string id, CinemaCrudModel cinema);
         void Delete(string id);
     }
 }

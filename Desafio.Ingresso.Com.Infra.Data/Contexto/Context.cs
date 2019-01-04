@@ -45,7 +45,7 @@ namespace Desafio.Ingresso.Com.Infra.Data.Contexto
         {
             get
             {
-                return database.GetCollection<Filme>("Filme");
+                return database.GetCollection<Filme>("Filmes");
             }
         }
 
@@ -53,7 +53,7 @@ namespace Desafio.Ingresso.Com.Infra.Data.Contexto
         {
             get
             {
-                return database.GetCollection<Cinema>("Cinema");
+                return database.GetCollection<Cinema>("Cinemas");
             }
         }
 
@@ -61,7 +61,15 @@ namespace Desafio.Ingresso.Com.Infra.Data.Contexto
         {
             get
             {
-                return database.GetCollection<Sessao>("Sessao");
+                return database.GetCollection<Sessao>("Sessaos");
+            }
+        }
+
+        public IMongoCollection<Cidade> Cidade
+        {
+            get
+            {
+                return database.GetCollection<Cidade>("Cidades");
             }
         }
     }

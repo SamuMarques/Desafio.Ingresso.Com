@@ -33,7 +33,7 @@ namespace Desafio.Ingresso.Com.API.Controllers
 
         // POST: api/Cinema
         [HttpPost]
-        public IActionResult Post([FromBody] CinemaModel cinema)
+        public IActionResult Post([FromBody] CinemaCrudModel cinema)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Desafio.Ingresso.Com.API.Controllers
 
         // PUT: api/Cinema/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] CinemaModel cinema)
+        public void Put(string id, [FromBody] CinemaCrudModel cinema)
         {
             cinema.Id = id;
             _cinemaAppService.Update(id, cinema);

@@ -21,13 +21,14 @@ namespace Desafio.Ingresso.Com.API.Controllers
 
         // GET: api/Sessao
         [HttpGet]
-        public IEnumerable<SessaoModel> Get()
+        [Route("/ObterSessoes/{idCidade}")]
+        public IEnumerable<SessaoModel> GetAll(string idCidade)
         {
-            return _sessaoAppService.GetAll();
+            return _sessaoAppService.FindAll(idCidade);
         }
 
         // GET: api/Sessao/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public SessaoModel Get(string id)
         {
             return _sessaoAppService.GetById(id);

@@ -4,7 +4,7 @@ namespace Desafio.Ingresso.Com.Application.Model
 {
     public class FilmeModel
     {
-        [Key]
+        
         public string Id { get; set; }
         [Required(ErrorMessage = "Preencha o campo nome")]
         [MaxLength(120, ErrorMessage = "Máximo 120 caracteres")]
@@ -19,7 +19,7 @@ namespace Desafio.Ingresso.Com.Application.Model
         [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
         public string Genero { get; set; }
         [Required(ErrorMessage = "Preencha o campo sinopse")]
-        [MaxLength(500, ErrorMessage = "Máximo 500 caracteres")]
+        [MaxLength(4000, ErrorMessage = "Máximo 4000 caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
         public string Sinopse { get; set; }
         [Required(ErrorMessage = "Preencha o campo duração")]
