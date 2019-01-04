@@ -7,13 +7,13 @@ using MongoDbGenericRepository.Utils;
 
 namespace Desafio.Ingresso.Com.Infra.Data.Contexto
 {
-    public class Context 
+    public class Context
     {
         private readonly IMongoDatabase database;
 
         public Context()
         {
-            database = new MongoClient("mongodb://admin:desenv1@ds147684.mlab.com:47684/samuelsdb").GetDatabase("samuelsdb");
+            database = new MongoClient(MongoSupport.ConnectionString).GetDatabase(MongoSupport.Database);
         }
         #region Generic
 

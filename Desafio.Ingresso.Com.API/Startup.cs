@@ -1,5 +1,6 @@
 ﻿using Desafio.Ingresso.Com.Application.Configuration;
 using Desafio.Ingresso.Com.Infra.Core;
+using Desafio.Ingresso.Com.Infra.Data.Contexto;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -23,9 +24,11 @@ namespace Desafio.Ingresso.Com.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            var dbConnection = Configuration.GetConnectionString("");
+
             ContainerSetup.Container(services);
             AutoMapperConfig.InicializeMapper();
-
+            Configuration.GetValue<string>("");
             services.AddSwaggerGen(s =>
             {
                 s.SwaggerDoc("v1", new Info
@@ -34,28 +37,11 @@ namespace Desafio.Ingresso.Com.API
                     Title = "Desafio Ingresso.com",
                 });
             });
+
+            services.AddMongo(Configuration.GetConnectionString("DefaultConnection"), 
+                Configuration.GetValue<string>("MySettings:MyDbName"));
+
         }
-
-        //private void ContainerSetup(IServiceCollection services)
-        //{
-
-        //    //Repository
-        //    services.AddScoped<IFilmeRepository, FilmeRepository>();
-        //    services.AddScoped<ICinemaRepository, CinemaRepository>();
-        //    services.AddScoped<ISalaRepository, SalaRepository>();
-        //    services.AddScoped<ISessaoRepository, SessaoRepository>();
-
-        //    //Services
-        //    services.AddScoped<IFilmeService, FilmeService>();
-        //    services.AddScoped<ICinemaService, CinemaService>();
-        //    services.AddScoped<ISessaoService, SessaoService>();
-        //    services.AddScoped<ISalaService, SalaService>();
-
-        //    //ApplicationServices
-        //    services.AddScoped<IFilmeAppService, FilmeAppService>();
-        //    services.AddScoped<ICinemaAppService, CinemaAppService>();
-
-        //}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
